@@ -1,0 +1,318 @@
+<!-- ■ 홈 페이지 -->
+<!-- 수정할 부분: hero 문구, 진료 카드, 후기, 오시는 길 등 -->
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div><div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow fi fi-1"><span class="hero-dot"></span>강동구 길동 · 25년 전통 한의원</div>
+      <h1 class="hero-title fi fi-2">
+        몸이 보내는 신호,<br>
+        <em>정성껏 읽어드립니다</em>
+        <span class="sub-line">침·뜸·한약으로 근본부터 다스립니다</span>
+      </h1>
+      <!-- ↓ 히어로 설명 문구 -->
+      <p class="hero-desc fi fi-3">
+        개원한지 25년, 이제는 아픈 곳을 치료하는 것을 넘어, 몸 전체의 균형을 찾아드립니다.
+      </p>
+      <div class="hero-actions fi fi-3">
+        <a href="https://naver.me/5ZJxpfI2" target="_blank" class="btn-hero-main">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          지금 예약하기
+        </a>
+        <a class="btn-hero-sub" onclick="showPage('about'); return false;">원장 소개 보기 →</a>
+      </div>
+      <div class="hero-stats fi fi-3">
+        <div><div class="hero-stat-num">25년</div><div class="hero-stat-label">진료 경력</div></div>
+        <div><div class="hero-stat-num">진맥</div><div class="hero-stat-label">전신 균형 진단</div></div>
+        <div><div class="hero-stat-num">길동</div><div class="hero-stat-label">강동구 대표 한의원</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-photo-bg">
+        <div class="hero-photo-ph">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+      </div>
+      <div class="hero-card c1"><div class="hc-badge">오늘 진료 가능</div><div class="hc-title">네이버 예약 운영 중</div><div class="hc-sub">당일 예약도 가능합니다</div></div>
+      <div class="hero-card c2"><div class="hc-badge">복조리시장 인근</div><div class="hc-title">길동역 5분 거리</div><div class="hc-sub">5호선 길동역 2번 출구</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>25년 임상 경력</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>진맥 중심 전신 균형 진찰</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>강동구 지역민과 함께 25년</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>카카오 채널 상담 가능</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>복조리시장 인근 접근 편리</div>
+  </div>
+</div>
+
+<!-- 진료 카드 -->
+<section class="section-treatments">
+  <div class="section-inner">
+    <div class="section-tag">주요 진료 과목</div>
+    <h2 class="h2">불편하신 곳, 어디든<br>편하게 오세요</h2>
+    <p class="desc" style="max-width:500px">침·뜸·한약으로 증상을 치료하고, 진맥으로 전신의 균형을 잡아드립니다.</p>
+    <div class="treatments-grid">
+      <a class="treatment-card" onclick="showPage('treatments'); return false;">
+        <div class="tc-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="tc-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div class="tc-name">침·뜸 치료</div>
+        <div class="tc-desc">경락의 기혈 순환을 회복시켜 통증을 다스리고 자연 치유력을 높입니다.</div>
+        <div class="tc-tags"><span class="tc-tag">근골격계</span><span class="tc-tag">통증</span><span class="tc-tag">기혈순환</span></div>
+      </a>
+      <a class="treatment-card" onclick="showPage('treatments'); return false;">
+        <div class="tc-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="tc-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div class="tc-name">한약 처방</div>
+        <div class="tc-desc">진맥으로 파악한 체질과 증상에 맞는 맞춤 한약을 처방합니다.</div>
+        <div class="tc-tags"><span class="tc-tag">체질 맞춤</span><span class="tc-tag">보약</span><span class="tc-tag">만성질환</span></div>
+      </a>
+      <a class="treatment-card" onclick="showPage('blog-insomnia'); return false;">
+        <div class="tc-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="tc-icon"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
+        <div class="tc-name">불면 · 수면 장애</div>
+        <div class="tc-desc">수면제 없이 자연스러운 수면 리듬을 되찾아 드립니다.</div>
+        <div class="tc-tags"><span class="tc-tag">불면증</span><span class="tc-tag">수면 개선</span><span class="tc-tag">안신</span></div>
+      </a>
+      <a class="treatment-card" onclick="showPage('treatments'); return false;">
+        <div class="tc-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="tc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <div class="tc-name">소화기 · 위장 질환</div>
+        <div class="tc-desc">소화불량, 역류성 식도염, 과민성 대장증후군 등을 한방으로 다스립니다.</div>
+        <div class="tc-tags"><span class="tc-tag">소화불량</span><span class="tc-tag">위염</span><span class="tc-tag">과민성대장</span></div>
+      </a>
+      <a class="treatment-card" onclick="showPage('treatments'); return false;">
+        <div class="tc-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="tc-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div class="tc-name">피로 · 기력 저하</div>
+        <div class="tc-desc">만성 피로, 기력 저하, 번아웃. 소진된 에너지를 보충하고 활력을 되찾아드립니다.</div>
+        <div class="tc-tags"><span class="tc-tag">만성피로</span><span class="tc-tag">기력저하</span><span class="tc-tag">번아웃</span></div>
+      </a>
+      <a class="treatment-card" onclick="showPage('treatments'); return false;">
+        <div class="tc-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="tc-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <div class="tc-name">두통 · 어지러움</div>
+        <div class="tc-desc">긴장성 두통, 편두통, 어지러움증. 기혈 순환을 개선하고 자율신경 균형을 회복합니다.</div>
+        <div class="tc-tags"><span class="tc-tag">두통</span><span class="tc-tag">편두통</span><span class="tc-tag">어지럼증</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 원장 소개 (홈 요약) -->
+<section class="section-about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-photo">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span>원장님 사진</span>
+      </div>
+      <div class="about-text">
+        <div class="about-eyebrow">원장 소개</div>
+        <h2 class="about-title">진맥 하나로<br>몸 전체를 읽습니다</h2>
+        <p class="about-body">
+          손목 위에 세 손가락을 올리면 몸이 이야기를 시작합니다. <strong>25년 동안 수만 번의 진맥</strong>을 해오면서, 맥 하나에서 그 사람의 전신 상태, 기혈의 흐름, 장부의 균형을 읽어내는 능력을 키워왔습니다.
+        </p>
+        <p class="about-body">
+          복조리시장 인근에 자리 잡은 이 한의원에서 <em>강동구 지역 주민들</em>과 함께 25년을 보냈습니다.
+        </p>
+        <div class="about-quote">
+          <p class="about-quote-text">"치료는 빠른 것이 중요한 게 아닙니다. 왜 아픈지 제대로 찾아야 제대로 낫습니다. 그래서 저는 항상 진맥부터 시작합니다."</p>
+        </div>
+        <div class="about-badges">
+          <span class="about-badge">한의사 면허</span>
+          <span class="about-badge">25년 임상</span>
+          <span class="about-badge">진맥 전문</span>
+          <span class="about-badge">강동구 길동</span>
+        </div>
+        <div style="margin-top:1.75rem">
+          <a class="btn-hero-main" style="display:inline-flex;background:var(--cream);color:var(--forest)" onclick="showPage('about'); return false;">원장 소개 더 보기 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 건강 칼럼 -->
+<section class="section-blog">
+  <div class="section-inner">
+    <div class="blog-header">
+      <div class="section-tag" style="justify-content:center">건강 칼럼</div>
+      <h2 class="h2" style="text-align:center">원장님이 직접 쓰는<br>건강 이야기</h2>
+      <p class="desc" style="text-align:center;max-width:480px;margin:0 auto">AI에게 물어봐도 여기가 나올만한, 정직하고 유익한 건강 정보를 전합니다</p>
+    </div>
+    <div class="blog-grid">
+      <a class="blog-card featured" onclick="showPage('blog-insomnia'); return false;">
+        <div class="blog-thumb featured-thumb">
+          <div class="blog-thumb-pattern"></div>
+          <div class="blog-thumb-icon">🌙</div>
+          <span class="blog-category">불면증</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-date">2026년 4월 7일</div>
+          <div class="blog-title">"잠을 못 자겠어요" — 수면제보다 먼저 해야 할 것들</div>
+          <div class="blog-excerpt">불면증으로 고생하시는 분들이 요즘 AI 챗봇에 먼저 물어보신다고 합니다. 수면제 없이 낫는 불면증, 한의학적으로 어떻게 접근하는지 솔직하게 알려드립니다.</div>
+          <div class="blog-footer"><span class="blog-read">자세히 읽기 →</span><span class="blog-time">읽는 데 약 8분</span></div>
+        </div>
+      </a>
+      <div class="blog-card" style="cursor:default;opacity:.7">
+        <div class="blog-thumb"><div class="blog-thumb-pattern"></div><div class="blog-thumb-icon">🔥</div><span class="blog-category">화병</span></div>
+        <div class="blog-content">
+          <div class="blog-date">다음 칼럼 예고</div>
+          <div class="blog-title">가슴이 답답하고 열이 치밀어 오른다면 — 화병, 어떻게 치료하나요?</div>
+          <div class="blog-footer"><span class="blog-read" style="color:var(--text-light)">준비 중</span></div>
+        </div>
+      </div>
+      <div class="blog-card" style="cursor:default;opacity:.7">
+        <div class="blog-thumb"><div class="blog-thumb-pattern"></div><div class="blog-thumb-icon">💪</div><span class="blog-category">피로</span></div>
+        <div class="blog-content">
+          <div class="blog-date">다음 칼럼 예고</div>
+          <div class="blog-title">아무리 자도 피곤하다 — 만성피로, 보약 한 첩으로 해결이 될까요?</div>
+          <div class="blog-footer"><span class="blog-read" style="color:var(--text-light)">준비 중</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="view-all-btn">
+      <a class="btn-outline" onclick="showPage('blog'); return false;">건강 칼럼 모두 보기</a>
+    </div>
+  </div>
+</section>
+
+<!-- 환자 후기 -->
+<section class="section-reviews" id="reviews">
+  <div class="section-inner">
+    <div class="reviews-header">
+      <div class="section-tag" style="justify-content:center">환자 후기</div>
+      <h2 class="h2" style="text-align:center">25년을 함께한<br>분들의 이야기</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">허리 통증으로 3년을 고생했는데, 원장님이 진맥 보시더니 "간기가 많이 울체됐네요"라고 하셨어요. 침 맞고 한약 두 달 먹었더니 통증이 없어지고 소화도 좋아졌어요.</p>
+        <div class="review-name">50대 남성, 만성 요통</div>
+        <div class="review-meta">네이버 지도 후기 · ★★★★★</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">불면증이 6개월 됐었는데 수면제는 먹기 싫어서 한의원을 찾았어요. 한 달 만에 스스로 잠들 수 있게 됐고 지금은 아주 잘 잡니다!</p>
+        <div class="review-name">40대 여성, 불면증</div>
+        <div class="review-meta">네이버 지도 후기 · ★★★★★</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">소화불량이랑 두통이 항상 같이 있었는데 원장님이 연관이 있다고 설명해주셨어요. 치료받고 나서 두 가지가 동시에 좋아지더라고요.</p>
+        <div class="review-name">35세 직장인, 소화불량·두통</div>
+        <div class="review-meta">네이버 지도 후기 · ★★★★★</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 오시는 길 -->
+<section class="section-visit" id="visit">
+  <div class="section-inner">
+    <div class="section-tag">오시는 길</div>
+    <div class="visit-grid">
+      <div>
+        <h2 class="visit-title">경희길동한의원<br>찾아오시는 방법</h2>
+        <div class="visit-items">
+          <div class="visit-item">
+            <div class="visit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="visit-label">주소</div><div class="visit-val">서울특별시 강동구 천중로52길 27 2층<br><span style="font-size:12px;color:var(--text-light)">길동 복조리시장 인근 · 5호선 길동역 2번 출구 도보 5분</span></div></div>
+          </div>
+          <div class="visit-item">
+            <div class="visit-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.57 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><div class="visit-label">전화</div><div class="visit-val">02-586-3375</div></div>
+          </div>
+          <div class="visit-item">
+            <div class="visit-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+            <div><div class="visit-label">진료 시간</div><div class="visit-val"><span>평일 오전 9시 — 오후 6시 30분</span><span>토요일 오전 9시 — 오후 1시</span><span style="color:var(--earth)">일요일 · 공휴일 휴진 | 점심 13:00–14:00</span></div></div>
+          </div>
+          <div class="visit-item">
+            <div class="visit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+            <div><div class="visit-label">교통</div><div class="visit-val"><span>지하철 5호선 길동역 2번 출구 도보 5분</span><span>복조리시장 인근 주차 가능</span></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="visit-map-wrap">
+        <div class="map-ph">
+          <svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>네이버 지도 (실제 적용 시 삽입)</span>
+        </div>
+        <div class="map-btns">
+          <a href="https://naver.me/5ZJxpfI2" target="_blank" class="map-btn btn-naver">네이버 지도 보기</a>
+          <a href="#" class="map-btn btn-kakao" onclick="alert('카카오맵'); return false;">카카오맵</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-cta">
+  <div class="section-inner cta-inner">
+    <div class="cta-eyebrow">예약 · 상담</div>
+    <h2 class="cta-title">불편하신 곳, 망설이지 말고<br>편하게 오세요</h2>
+    <p class="cta-desc">25년간 강동구 지역 주민과 함께해온 한의원입니다.<br>처음 오시는 분도 편안하게 이야기 나눌 수 있습니다.</p>
+    <div class="cta-actions">
+      <a href="https://naver.me/5ZJxpfI2" target="_blank" class="btn-cta">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        네이버 예약하기
+      </a>
+      <a href="#" class="btn-cta-line" onclick="alert('카카오 채널 상담'); return false;">💬 카카오 채널 상담</a>
+    </div>
+    <p class="cta-note">전화 예약 02-586-3375 · 평일 9–18:30 · 토 9–13시</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">경희길동한의원</div>
+        <p class="footer-tagline">강동구 길동 복조리시장 인근<br>25년 경력 진맥 전문 한의원</p>
+        <div class="footer-contact">📍 서울특별시 강동구 천중로52길 27 2층</div>
+        <div class="footer-contact">📞 02-586-3375</div>
+        <div class="footer-contact">🕐 평일 09:00–18:30 · 토 09:00–13:00</div>
+      </div>
+      <div>
+        <div class="footer-col-title">진료 안내</div>
+        <div class="footer-links-col">
+          <a onclick="showPage('treatments'); return false;">침·뜸 치료</a>
+          <a onclick="showPage('treatments'); return false;">한약 처방</a>
+          <a onclick="showPage('blog-insomnia'); return false;">불면증 치료</a>
+          <a onclick="showPage('treatments'); return false;">소화기 질환</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">건강 칼럼</div>
+        <div class="footer-links-col">
+          <a onclick="showPage('blog-insomnia'); return false;">불면증 · 수면 장애</a>
+          <a style="opacity:.4">화병 (준비 중)</a>
+          <a style="opacity:.4">만성피로 (준비 중)</a>
+          <a style="opacity:.4">두통 (준비 중)</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">예약 · 상담</div>
+        <div class="footer-links-col">
+          <a href="https://naver.me/5ZJxpfI2" target="_blank">네이버 예약</a>
+          <a>카카오 채널 상담</a>
+          <a href="tel:025863375">전화 예약</a>
+          <a href="#" onclick="goToSection('visit'); return false;">오시는 길</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 경희길동한의원. All rights reserved. | 사업자등록번호: 000-00-00000 | 대표자: 이상원 원장</div>
+      <div class="footer-policy"><a>개인정보처리방침</a><a>이용약관</a></div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,350 @@
+/* ============================================
+   경희길동한의원 메인 스타일시트
+   수정 시 이 파일만 편집하면 됩니다
+   ============================================ */
+
+/* --- 색상 & 디자인 변수 --- */
+:root {
+  --forest: #1e3a2f;       /* 메인 진녹색 (로고, 헤더, CTA 배경) */
+  --forest-mid: #2d5a43;   /* 진녹색 중간 톤 */
+  --sage: #4a7c6f;         /* 세이지 초록 (태그, 강조) */
+  --sage-light: #7aab9a;   /* 연한 세이지 (배지, 서브텍스트) */
+  --cream: #f7f3ec;        /* 크림 배경 */
+  --cream-dark: #ede7d9;   /* 진한 크림 (구분선) */
+  --beige: #c8b8a2;        /* 베이지 */
+  --earth: #8b6f47;        /* 흙색 (경고 텍스트) */
+  --text-dark: #1a1a18;    /* 본문 진한 텍스트 */
+  --text-mid: #4a4a44;     /* 본문 중간 텍스트 */
+  --text-light: #8a8a80;   /* 보조 텍스트 */
+  --white: #ffffff;
+  --serif: 'Noto Serif KR', serif;
+  --sans: 'Noto Sans KR', sans-serif;
+  --shadow-sm: 0 2px 12px rgba(30,58,47,0.08);
+  --shadow-md: 0 8px 40px rgba(30,58,47,0.12);
+  --radius: 16px;
+  --radius-sm: 8px;
+}
+
+/* --- 기본 리셋 --- */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);color:var(--text-dark);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ============================================
+   NAV (상단 네비게이션)
+   ============================================ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,184,162,0.3);transition:all .3s}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:68px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer}
+.nav-logo-mark{width:34px;height:34px;background:var(--forest);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nav-logo-mark svg{width:18px;height:18px;fill:none;stroke:var(--cream);stroke-width:1.5}
+.nav-logo-text{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--forest);line-height:1.1}
+.nav-logo-sub{font-size:10px;font-weight:400;color:var(--text-light);display:block;letter-spacing:.04em}
+.nav-menu{display:flex;gap:0;list-style:none}
+.nav-menu a{text-decoration:none;color:var(--text-mid);font-size:14px;font-weight:500;padding:0 1rem;height:68px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:all .2s;cursor:pointer}
+.nav-menu a:hover{color:var(--forest);border-bottom-color:var(--sage)}
+.btn-reserve{background:var(--forest);color:var(--white);border:none;padding:9px 20px;border-radius:22px;font-family:var(--sans);font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;transition:all .2s;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.btn-reserve:hover{background:var(--forest-mid);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+
+/* --- 페이지 전환 --- */
+.page{display:none}
+.page.active{display:block}
+
+/* ============================================
+   HERO (첫 화면 큰 배너)
+   ============================================ */
+.hero{min-height:100vh;background:var(--forest);position:relative;overflow:hidden;display:flex;align-items:center;padding-top:68px}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 25% 50%,rgba(74,124,111,.3),transparent 55%),radial-gradient(circle at 75% 25%,rgba(74,124,111,.15),transparent 40%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,184,162,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(200,184,162,.04) 1px,transparent 1px);background-size:60px 60px}
+.hero-inner{max-width:1200px;margin:0 auto;padding:5rem 2rem 6rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1;width:100%}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(200,184,162,.12);border:1px solid rgba(200,184,162,.25);border-radius:24px;padding:6px 16px;font-size:12px;font-weight:500;color:var(--beige);letter-spacing:.06em;margin-bottom:1.5rem}
+.hero-dot{width:6px;height:6px;background:var(--sage-light);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero-title{font-family:var(--serif);font-size:clamp(2rem,3.8vw,3.2rem);font-weight:700;color:var(--white);line-height:1.28;margin-bottom:1.5rem;letter-spacing:-.01em}
+.hero-title em{color:var(--sage-light);font-style:normal}
+.hero-title .sub-line{display:block;font-size:.65em;font-weight:300;color:rgba(255,255,255,.55);margin-top:.3em;font-family:var(--sans)}
+.hero-desc{font-size:15px;line-height:1.95;color:rgba(255,255,255,.72);margin-bottom:2.5rem;font-weight:300}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-hero-main{background:var(--cream);color:var(--forest);border:none;padding:13px 26px;border-radius:26px;font-family:var(--sans);font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .25s}
+.btn-hero-main:hover{background:var(--white);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.btn-hero-sub{background:transparent;color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.3);padding:13px 26px;border-radius:26px;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px}
+.btn-hero-sub:hover{border-color:rgba(255,255,255,.6)}
+.hero-stats{display:flex;gap:2.5rem;margin-top:3rem;border-top:1px solid rgba(200,184,162,.15);padding-top:2rem}
+.hero-stat-num{font-family:var(--serif);font-size:1.9rem;font-weight:700;color:var(--white);line-height:1}
+.hero-stat-label{font-size:11px;color:rgba(255,255,255,.45);margin-top:4px}
+.hero-visual{position:relative;display:flex;justify-content:center}
+.hero-photo-bg{background:rgba(74,124,111,.18);border:1px solid rgba(200,184,162,.18);border-radius:28px 28px 140px 28px;padding:2.5rem 2rem 2rem;max-width:400px;width:100%}
+.hero-photo-ph{width:100%;aspect-ratio:3/4;max-height:360px;background:linear-gradient(155deg,rgba(74,124,111,.3),rgba(45,90,67,.5));border-radius:18px 18px 100px 18px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;position:relative}
+.hero-photo-ph::after{content:'원장님 사진';position:absolute;bottom:1.25rem;font-size:11px;color:rgba(255,255,255,.35);letter-spacing:.06em}
+.hero-photo-ph svg{width:70px;height:70px;stroke:rgba(200,184,162,.4);fill:none;stroke-width:.8}
+.hero-card{position:absolute;background:var(--white);border-radius:10px;padding:11px 15px;box-shadow:var(--shadow-md)}
+.hero-card.c1{bottom:1.5rem;left:-1.25rem}
+.hero-card.c2{top:1.25rem;right:-.75rem}
+.hc-badge{display:inline-block;font-size:9px;font-weight:700;background:#e8f4ee;color:#1e6b44;border-radius:3px;padding:2px 7px;margin-bottom:5px;letter-spacing:.04em}
+.hc-title{font-size:12px;font-weight:700;color:var(--text-dark)}
+.hc-sub{font-size:10px;color:var(--text-light);margin-top:2px}
+
+/* ============================================
+   TRUST STRIP (신뢰 띠)
+   ============================================ */
+.trust-strip{background:var(--cream);border-bottom:1px solid var(--cream-dark);padding:1.1rem 0}
+.trust-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--text-mid);font-weight:500;white-space:nowrap}
+.trust-item svg{width:18px;height:18px;stroke:var(--sage);fill:none;stroke-width:1.8;flex-shrink:0}
+
+/* ============================================
+   공통 섹션 스타일
+   ============================================ */
+section{position:relative}
+.section-inner{max-width:1200px;margin:0 auto;padding:0 2rem}
+.section-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:.8rem}
+.section-tag::before{content:'';display:block;width:18px;height:1.5px;background:var(--sage)}
+.h2{font-family:var(--serif);font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:700;color:var(--forest);line-height:1.3;margin-bottom:.9rem}
+.desc{font-size:15px;color:var(--text-mid);line-height:1.85;font-weight:300}
+
+/* ============================================
+   TREATMENTS (진료 카드)
+   ============================================ */
+.section-treatments{padding:7rem 0;background:var(--white)}
+.treatments-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3.5rem}
+.treatment-card{background:var(--cream);border-radius:var(--radius);padding:2rem 1.75rem;border:1px solid rgba(200,184,162,.4);cursor:pointer;text-decoration:none;display:block;transition:all .3s;position:relative;overflow:hidden}
+.treatment-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--sage);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.treatment-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);background:var(--white)}
+.treatment-card:hover::after{transform:scaleX(1)}
+.tc-icon{width:50px;height:50px;background:#eaf4ef;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+.tc-icon svg{width:25px;height:25px;stroke:var(--sage);fill:none;stroke-width:1.5}
+.tc-name{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--forest);margin-bottom:7px}
+.tc-desc{font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:.9rem}
+.tc-tags{display:flex;gap:5px;flex-wrap:wrap}
+.tc-tag{font-size:11px;color:var(--sage);background:rgba(74,124,111,.1);padding:3px 9px;border-radius:10px;font-weight:500}
+.tc-arrow{position:absolute;top:1.25rem;right:1.25rem;width:26px;height:26px;border-radius:50%;border:1px solid var(--cream-dark);display:flex;align-items:center;justify-content:center;transition:all .2s}
+.treatment-card:hover .tc-arrow{background:var(--forest);border-color:var(--forest)}
+.tc-arrow svg{width:11px;height:11px;stroke:var(--text-light);stroke-width:2;fill:none;transition:stroke .2s}
+.treatment-card:hover .tc-arrow svg{stroke:var(--white)}
+
+/* ============================================
+   ABOUT (원장 소개 섹션)
+   ============================================ */
+.section-about{padding:7rem 0;background:var(--forest);color:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:3.5rem}
+.about-photo{background:rgba(74,124,111,.2);border:1px solid rgba(200,184,162,.18);border-radius:24px 24px 120px 24px;aspect-ratio:4/5;max-height:480px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem}
+.about-photo svg{width:80px;height:80px;stroke:rgba(200,184,162,.35);fill:none;stroke-width:.75}
+.about-photo span{font-size:12px;color:rgba(255,255,255,.3)}
+.about-eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage-light);margin-bottom:1rem}
+.about-title{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:700;color:var(--white);line-height:1.3;margin-bottom:2rem}
+.about-body{font-size:15px;line-height:2.1;color:rgba(255,255,255,.7);font-weight:300;margin-bottom:1.25rem}
+.about-body strong{color:var(--white);font-weight:700}
+.about-body em{color:var(--sage-light);font-style:normal}
+.about-quote{background:rgba(255,255,255,.07);border-radius:12px;padding:1.5rem;margin:1.5rem 0;position:relative}
+.about-quote::before{content:'"';font-family:var(--serif);font-size:80px;font-weight:900;color:rgba(255,255,255,.06);position:absolute;top:-15px;left:15px;line-height:1}
+.about-quote-text{font-family:var(--serif);font-size:15px;line-height:1.85;color:rgba(255,255,255,.85);font-weight:300;position:relative;z-index:1}
+.about-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.5rem}
+.about-badge{font-size:12px;font-weight:500;padding:5px 14px;border-radius:18px;background:rgba(122,171,154,.2);color:var(--sage-light);border:1px solid rgba(122,171,154,.3)}
+
+/* ============================================
+   BLOG (건강 칼럼)
+   ============================================ */
+.section-blog{padding:7rem 0;background:var(--cream)}
+.blog-header{text-align:center;margin-bottom:3.5rem}
+.blog-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.blog-card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(200,184,162,.35);cursor:pointer;text-decoration:none;display:block;transition:all .3s}
+.blog-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.blog-card.featured{grid-column:span 2}
+.blog-thumb{height:200px;background:linear-gradient(145deg,var(--forest),var(--forest-mid));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.blog-thumb.featured-thumb{height:280px}
+.blog-thumb-pattern{position:absolute;inset:0;background-image:radial-gradient(circle at 30% 50%,rgba(122,171,154,.25),transparent 50%),radial-gradient(circle at 70% 30%,rgba(200,184,162,.1),transparent 40%)}
+.blog-thumb-icon{font-size:3rem;position:relative;z-index:1}
+.blog-category{position:absolute;top:1rem;left:1rem;background:var(--sage);color:var(--white);font-size:10px;font-weight:700;padding:4px 10px;border-radius:10px;letter-spacing:.06em;text-transform:uppercase}
+.blog-content{padding:1.5rem}
+.blog-date{font-size:11px;color:var(--text-light);margin-bottom:6px;letter-spacing:.04em}
+.blog-title{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--forest);line-height:1.4;margin-bottom:8px}
+.blog-card.featured .blog-title{font-size:21px}
+.blog-excerpt{font-size:13px;color:var(--text-mid);line-height:1.75}
+.blog-footer{display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--cream-dark)}
+.blog-read{font-size:12px;font-weight:700;color:var(--sage)}
+.blog-time{font-size:11px;color:var(--text-light)}
+.view-all-btn{display:block;text-align:center;margin-top:2.5rem}
+.btn-outline{background:transparent;color:var(--forest);border:1.5px solid var(--sage);padding:12px 32px;border-radius:24px;font-family:var(--sans);font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;transition:all .2s;display:inline-block}
+.btn-outline:hover{background:var(--forest);color:var(--white);border-color:var(--forest)}
+
+/* ============================================
+   REVIEWS (환자 후기)
+   ============================================ */
+.section-reviews{padding:7rem 0;background:var(--white)}
+.reviews-header{text-align:center;margin-bottom:3.5rem}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.review-card{background:var(--cream);border-radius:var(--radius);padding:1.75rem;border:1px solid var(--cream-dark);position:relative}
+.review-card::before{content:'"';font-family:var(--serif);font-size:55px;font-weight:900;color:var(--sage-light);position:absolute;top:10px;right:18px;line-height:1;opacity:.35}
+.review-stars{display:flex;gap:2px;margin-bottom:10px}
+.review-text{font-size:13px;line-height:1.85;color:var(--text-mid);margin-bottom:1rem;font-style:italic}
+.review-name{font-size:13px;font-weight:700;color:var(--text-dark)}
+.review-meta{font-size:11px;color:var(--text-light);margin-top:2px}
+
+/* ============================================
+   VISIT (오시는 길)
+   ============================================ */
+.section-visit{padding:7rem 0;background:var(--cream)}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:3.5rem}
+.visit-title{font-family:var(--serif);font-size:1.7rem;font-weight:700;color:var(--forest);margin-bottom:1.75rem}
+.visit-items{display:flex;flex-direction:column;gap:1.25rem}
+.visit-item{display:flex;gap:13px;align-items:flex-start}
+.visit-icon{width:38px;height:38px;background:var(--forest);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.visit-icon svg{width:17px;height:17px;stroke:var(--cream);fill:none;stroke-width:1.8}
+.visit-label{font-size:12px;font-weight:700;color:var(--text-dark);margin-bottom:3px}
+.visit-val{font-size:14px;color:var(--text-mid);line-height:1.7}
+.visit-val span{display:block}
+.visit-map-wrap{background:var(--white);border-radius:var(--radius);border:1px solid var(--cream-dark);overflow:hidden}
+.map-ph{height:260px;background:linear-gradient(145deg,#e8f0ec,#dce8e0);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px}
+.map-ph svg{width:36px;height:36px;stroke:var(--sage);fill:none;stroke-width:1.5}
+.map-ph span{font-size:12px;color:var(--text-light)}
+.map-btns{padding:1.25rem;display:flex;gap:10px}
+.map-btn{flex:1;text-align:center;padding:11px;border-radius:7px;font-size:12px;font-weight:700;text-decoration:none;transition:all .2s;cursor:pointer;border:none;font-family:var(--sans)}
+.btn-naver{background:#03c75a;color:#fff}
+.btn-naver:hover{background:#02a84a}
+.btn-kakao{background:#fee500;color:#1a1300}
+.btn-kakao:hover{background:#f0d900}
+
+/* ============================================
+   CTA (예약 유도 배너)
+   ============================================ */
+.section-cta{padding:6rem 0;background:var(--forest)}
+.cta-inner{text-align:center}
+.cta-eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage-light);margin-bottom:.9rem}
+.cta-title{font-family:var(--serif);font-size:clamp(1.75rem,3.2vw,2.6rem);font-weight:700;color:var(--white);line-height:1.3;margin-bottom:.9rem}
+.cta-desc{font-size:15px;color:rgba(255,255,255,.6);margin-bottom:2.75rem;font-weight:300}
+.cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-cta{background:var(--cream);color:var(--forest);border:none;padding:15px 30px;border-radius:30px;font-family:var(--sans);font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:all .25s}
+.btn-cta:hover{background:var(--white);transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.btn-cta-line{background:transparent;color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.3);padding:15px 30px;border-radius:30px;font-family:var(--sans);font-size:15px;font-weight:500;cursor:pointer;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:9px}
+.btn-cta-line:hover{border-color:rgba(255,255,255,.6)}
+.cta-note{font-size:11px;color:rgba(255,255,255,.35);margin-top:1.5rem}
+
+/* ============================================
+   FOOTER (하단)
+   ============================================ */
+.footer{background:var(--text-dark);color:rgba(255,255,255,.45);padding:4rem 0 2rem}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 2rem}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--white);margin-bottom:.9rem}
+.footer-tagline{font-size:13px;line-height:1.8;color:rgba(255,255,255,.35);margin-bottom:1.25rem}
+.footer-contact{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:5px}
+.footer-col-title{font-size:13px;font-weight:700;color:var(--white);margin-bottom:1.1rem}
+.footer-links-col{display:flex;flex-direction:column;gap:9px}
+.footer-links-col a{font-size:13px;color:rgba(255,255,255,.38);text-decoration:none;transition:color .2s;cursor:pointer}
+.footer-links-col a:hover{color:rgba(255,255,255,.75)}
+.footer-bottom{padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.2)}
+.footer-policy{display:flex;gap:1.5rem}
+.footer-policy a{font-size:11px;color:rgba(255,255,255,.2);text-decoration:none}
+
+/* ============================================
+   FLOATING 버튼 (우측 하단 고정)
+   ============================================ */
+.floating-cta{position:fixed;bottom:2rem;right:2rem;display:flex;flex-direction:column;gap:9px;z-index:99}
+.float-btn{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md);cursor:pointer;border:none;text-decoration:none;transition:all .25s;font-size:13px;font-weight:900}
+.float-btn:hover{transform:scale(1.1)}
+.float-kakao{background:#fee500;color:#1a1300}
+.float-tel{background:var(--forest);color:var(--white)}
+.float-tel svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2}
+.float-naver{background:#03c75a;color:var(--white)}
+
+/* ============================================
+   내부 페이지 공통 (원장소개, 칼럼 등)
+   ============================================ */
+.inner-hero{background:var(--forest);padding:8rem 0 4rem;position:relative;overflow:hidden}
+.inner-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(74,124,111,.3),transparent 60%)}
+.inner-hero-content{position:relative;z-index:1}
+.breadcrumb{font-size:12px;color:rgba(255,255,255,.38);margin-bottom:1rem;display:flex;align-items:center;gap:7px}
+.breadcrumb a{color:rgba(255,255,255,.38);text-decoration:none;cursor:pointer}
+.breadcrumb span{color:rgba(255,255,255,.55)}
+.inner-title{font-family:var(--serif);font-size:clamp(1.9rem,3.8vw,2.9rem);font-weight:700;color:var(--white);margin-bottom:.9rem}
+.inner-desc{font-size:15px;color:rgba(255,255,255,.6);font-weight:300;line-height:1.75}
+
+/* ============================================
+   블로그 포스트 본문
+   ============================================ */
+.blog-post-wrap{max-width:780px;margin:0 auto;padding:4rem 2rem 6rem}
+.post-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--cream-dark)}
+.post-category{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:#eaf4ef;color:var(--sage);padding:4px 12px;border-radius:10px;margin-bottom:1rem}
+.post-title{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.5rem);font-weight:700;color:var(--forest);line-height:1.3;margin-bottom:1rem}
+.post-meta{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}
+.post-date{font-size:13px;color:var(--text-light)}
+.post-author{font-size:13px;color:var(--text-light);display:flex;align-items:center;gap:6px}
+.post-author::before{content:'';display:block;width:4px;height:4px;border-radius:50%;background:var(--beige)}
+.post-read-time{font-size:12px;color:var(--text-light);background:var(--cream);padding:3px 10px;border-radius:10px}
+.post-thumb-area{background:linear-gradient(145deg,var(--forest),var(--forest-mid));border-radius:var(--radius);height:320px;display:flex;align-items:center;justify-content:center;margin-bottom:3rem;position:relative;overflow:hidden}
+.post-thumb-area::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 35% 55%,rgba(122,171,154,.3),transparent 55%)}
+.post-thumb-icon{font-size:5rem;position:relative;z-index:1}
+.post-body{font-size:16px;line-height:2.1;color:var(--text-mid)}
+.post-body h2{font-family:var(--serif);font-size:1.55rem;font-weight:700;color:var(--forest);margin:2.5rem 0 1rem;padding-bottom:.6rem;border-bottom:2px solid var(--cream-dark)}
+.post-body h3{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--forest);margin:2rem 0 .75rem;display:flex;align-items:center;gap:8px}
+.post-body h3::before{content:'';display:block;width:4px;height:17px;background:var(--sage);border-radius:2px;flex-shrink:0}
+.post-body p{margin-bottom:1.2rem}
+.post-body strong{color:var(--forest);font-weight:700}
+.post-body em{color:var(--sage);font-style:normal;font-weight:500}
+.post-body ul{margin:1rem 0 1.2rem 1.5rem}
+.post-body ul li{margin-bottom:.5rem;line-height:1.85}
+.post-body ol{margin:1rem 0 1.2rem 1.5rem}
+.post-body ol li{margin-bottom:.5rem;line-height:1.85}
+.post-callout{background:var(--cream);border-radius:12px;padding:1.5rem 1.75rem;margin:2rem 0;border-left:4px solid var(--sage)}
+.post-callout-title{font-size:14px;font-weight:700;color:var(--forest);margin-bottom:.5rem}
+.post-callout p{font-size:14px;color:var(--text-mid);line-height:1.8;margin:0}
+.post-callout-tip{background:#eaf4ef;border-left-color:#2e7d52}
+.post-callout-warn{background:#fff8e6;border-left-color:#c08000}
+.post-callout-info{background:#eff6ff;border-left-color:#2563ab}
+.post-table{width:100%;border-collapse:collapse;margin:1.5rem 0;border-radius:10px;overflow:hidden;border:1px solid var(--cream-dark)}
+.post-table th{background:var(--forest);color:var(--white);font-size:13px;font-weight:600;padding:10px 14px;text-align:left}
+.post-table td{font-size:14px;padding:10px 14px;border-bottom:1px solid var(--cream-dark);color:var(--text-mid);vertical-align:top;line-height:1.65}
+.post-table tr:last-child td{border-bottom:none}
+.post-table tr:nth-child(even) td{background:#faf8f4}
+.post-cta-box{background:var(--forest);border-radius:var(--radius);padding:2rem;margin:3rem 0;color:var(--white);text-align:center}
+.post-cta-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--white);margin-bottom:.5rem}
+.post-cta-desc{font-size:13px;color:rgba(255,255,255,.65);margin-bottom:1.5rem;line-height:1.7}
+.post-cta-btn{display:inline-block;background:var(--cream);color:var(--forest);padding:12px 28px;border-radius:24px;font-size:14px;font-weight:700;text-decoration:none;transition:all .2s;cursor:pointer}
+.post-cta-btn:hover{background:var(--white);transform:translateY(-1px)}
+.post-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--cream-dark)}
+.post-tag{font-size:12px;color:var(--sage);background:#eaf4ef;padding:4px 12px;border-radius:12px;font-weight:500}
+.post-share{background:var(--cream);border-radius:12px;padding:1.25rem 1.5rem;margin-top:2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.post-share-text{font-size:13px;font-weight:700;color:var(--text-dark)}
+.post-share-btns{display:flex;gap:8px}
+.share-btn{padding:7px 16px;border-radius:16px;font-size:12px;font-weight:700;cursor:pointer;border:none;font-family:var(--sans);transition:all .2s}
+.share-kakao{background:#fee500;color:#1a1300}
+.share-kakao:hover{background:#f0d900}
+.share-copy{background:var(--white);color:var(--text-mid);border:1px solid var(--cream-dark)}
+.share-copy:hover{background:var(--forest);color:var(--white);border-color:var(--forest)}
+.post-nav{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3rem}
+.post-nav-btn{background:var(--white);border:1px solid var(--cream-dark);border-radius:10px;padding:1rem 1.25rem;cursor:pointer;text-decoration:none;display:block;transition:all .2s}
+.post-nav-btn:hover{background:var(--cream);transform:translateY(-2px)}
+.pnb-dir{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:4px}
+.pnb-title{font-size:14px;font-weight:700;color:var(--forest);line-height:1.4}
+
+/* ============================================
+   반응형 (모바일/태블릿)
+   ============================================ */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .about-grid{grid-template-columns:1fr}
+  .about-photo{display:none}
+  .blog-grid{grid-template-columns:1fr}
+  .blog-card.featured{grid-column:span 1}
+  .treatments-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-menu{display:none}
+  .hero-title{font-size:1.9rem}
+  .treatments-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .visit-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr;gap:2rem}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+  .trust-inner{gap:1rem}
+}
+
+/* ============================================
+   애니메이션
+   ============================================ */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fi{animation:fadeInUp .65s ease forwards}
+.fi-1{animation-delay:.1s}.fi-2{animation-delay:.2s}.fi-3{animation-delay:.35s}
